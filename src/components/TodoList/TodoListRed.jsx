@@ -12,7 +12,43 @@ export default function TodoListRed({ filter, title}) {
   const handleDelete = (deleted) =>
     setTodos(todos.filter((t) => t.id !== deleted.id));
   useEffect(()=>{
-    localStorage.setItem(`todosred`, JSON.stringify(todos));
+    if (localStorage.getItem('landedR')){
+      localStorage.setItem(`todosred`, JSON.stringify(todos));
+    } else {
+      localStorage.setItem('landedR', true)
+      setTodos([
+        {
+            "id": "578a916f-a36a-4b61-baba-1fb29bef17a0",
+            "text": "증명사진 출력하기",
+            "status": "active"
+        },
+        {
+            "id": "3ffee66b-f131-419e-b292-ff4d9b1d448c",
+            "text": "전세 재계약 확인하기",
+            "status": "active"
+        },
+        {
+            "id": "7bec7756-5a41-4379-83f1-fc917b556827",
+            "text": "병원예약하기",
+            "status": "completed"
+        },
+        {
+            "id": "a6789316-5931-4e85-989a-44c545a61e3b",
+            "text": "카드대금 미리결제",
+            "status": "completed"
+        },
+        {
+            "id": "202289c5-d27c-4a64-b5a9-fc7523abd6a9",
+            "text": "토요일에 술약속 절대 잊지않기",
+            "status": "active"
+        },
+        {
+            "id": "99d7528f-fcd6-46b2-9c89-7a429119ab09",
+            "text": "엔진오일 갈기",
+            "status": "completed"
+        }
+    ])
+    }
   },[todos])
   const filtered = getFilteredItems(todos, filter);
   return (
