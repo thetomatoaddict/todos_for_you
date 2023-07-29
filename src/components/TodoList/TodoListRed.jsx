@@ -15,6 +15,7 @@ export default function TodoListRed({ filter, title}) {
     if (localStorage.getItem('landedR')){
       localStorage.setItem(`todosred`, JSON.stringify(todos));
     } else {
+      localStorage.setItem('theme', 'light')
       localStorage.setItem('landedR', true)
       setTodos([
         {
