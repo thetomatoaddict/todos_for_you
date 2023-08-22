@@ -12,3 +12,10 @@
 - 항목의 상태에 따른 필터링 기능
 - 다크모드 토글
 - 사용자의 Local storage에 데이터 보관
+
+## 사용된 기술
+----------
+- React
+- Javascript
+- PostCSS
+- Netlify (배포)
